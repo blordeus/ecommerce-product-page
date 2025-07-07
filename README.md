@@ -1,8 +1,10 @@
 # E-commerce Product Page
 
+[![<ecommerce-product-page](./public/all-devices.png)](https://blordeus.github.io/ecommerce-product-page/)
+
 This is a responsive e-commerce product page built with React, featuring a product gallery with a lightbox, product details, a cart system with quantity selection, and a mobile-friendly hamburger menu. The project is designed to match the Front End Mentor "E-commerce Product Page" challenge and is deployed to GitHub Pages.
 
-- **Live Demo**: [https://<blordeus>.github.io/<ecommerce-product-page>](https://<blordeus>.github.io/<ecommerce-product-page>) (Replace with your actual URL after deployment)
+- **Live Demo**: [https://<blordeus>.github.io/<ecommerce-product-page>](https://<blordeus>.github.io/<ecommerce-product-page>) 
 - **Created**: July 06, 2025
 
 ## Features
