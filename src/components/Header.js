@@ -3,6 +3,8 @@ import React from 'react';
 import { FaShoppingCart, FaBars } from 'react-icons/fa';
 import avatar from '../assets/images/image-avatar.png'; // Adjust file name if different
 import './Header.css';
+import logo from '../assets/images/logo.svg';
+import cart from '../assets/images/icon-cart.svg';
 
 const Header = ({ cartItems, toggleCart }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -17,7 +19,8 @@ const Header = ({ cartItems, toggleCart }) => {
         <FaBars />
       </button>
       <div className="logo">
-       <h1>sneakers</h1>
+       {/* <h1>sneakers</h1> Placeholder */}
+       <img src={logo} alt="Logo" />
        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
         <button className="close-menu" onClick={toggleMenu} aria-label="Close menu">
           ×
@@ -36,7 +39,8 @@ const Header = ({ cartItems, toggleCart }) => {
           className="cart-button"
           aria-label="View cart"
         >
-          <FaShoppingCart className="cart-icon" />
+          {/* <FaShoppingCart className="cart-icon" /> Placeholder*/}
+          <img src={cart} alt="Cart" className="cart-icon" />
           {totalItems > 0 && (
             <span className="cart-count">{totalItems}</span>
           )}

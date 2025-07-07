@@ -23,7 +23,7 @@ body {
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding:  100px 20px;
+  padding:  80px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -33,7 +33,15 @@ body {
 @media (max-width: 768px) {
   .main-container {
     grid-template-columns: 1fr;
-    padding: 140px 40px; /* Reduced padding for mobile */
+    padding: 40px 40px; /* Reduced padding for mobile */
+    gap: 24px; /* Adjusted gap for tighter layout */
+  }
+}
+
+@media (max-width: 575px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 30px 40px; /* Reduced padding for mobile */
     gap: 24px; /* Adjusted gap for tighter layout */
   }
 }

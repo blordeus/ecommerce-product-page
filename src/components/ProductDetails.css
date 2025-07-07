@@ -90,8 +90,8 @@
 }
 
 .add-to-cart svg {
-  width: 20px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 @media (min-width: 769px) {
@@ -109,4 +109,10 @@
     flex-grow: 1;
     max-width: 150px;    
   }
+}
+
+@media (max-width: 768px) {
+  .product-details {
+    margin-top: 10px;
+  }  
 }
