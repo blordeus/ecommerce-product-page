@@ -1,3 +1,25 @@
+# E-commerce Product Page
+
+This is a responsive e-commerce product page built with React, featuring a product gallery with a lightbox, product details, a cart system with quantity selection, and a mobile-friendly hamburger menu. The project is designed to match the Front End Mentor "E-commerce Product Page" challenge and is deployed to GitHub Pages.
+
+- **Live Demo**: [https://<blordeus>.github.io/<ecommerce-product-page>](https://<blordeus>.github.io/<ecommerce-product-page>) (Replace with your actual URL after deployment)
+- **Created**: July 06, 2025
+
+## Features
+- Responsive design for desktop, tablet, and mobile devices.
+- Product gallery with thumbnail navigation and a lightbox (desktop only).
+- Quantity selector and "Add to Cart" functionality with local storage persistence.
+- Cart modal displaying items and total.
+- Mobile hamburger menu with a sliding navigation panel and black overlay.
+- Styled with vanilla CSS, matching the Front End Mentor design (orange accents, 'Kumbh Sans' font).
+
+## Technologies Used
+- **React**: For building the user interface.
+- **React Icons**: For hamburger and cart icons.
+- **CSS**: For styling and responsiveness.
+- **GitHub Pages**: For deployment.
+
+## Installation
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
