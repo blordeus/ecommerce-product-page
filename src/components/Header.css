@@ -1,0 +1,167 @@
+/* src/components/Header.css */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px 40px;
+  border-bottom: 1px solid #E5E7EB;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1200;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1D2026;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #1D2026;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  margin-left:80px;/*Reduced from 48px to bring closer */
+  font-weight: 500;
+}
+
+.nav-link {
+  color: #68707D;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-link:hover {
+  color: #FF7E1B;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 20px;
+  color: #68707D;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #FF7E1B;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 10px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.avatar:hover {
+  outline: 2px solid #FF7E1B;
+}
+
+/* Mobile/Tablet Menu Styles */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:300px;
+    height: 100%;
+    background: white;
+    padding: 60px 20px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 80;
+    margin-left: 0;
+  }
+
+  .nav.open {
+    display: flex;
+    transform: translateX(0);
+    align-items: flex-start;
+  }
+
+  .nav a {
+    text-align: left;
+    margin-left: 20%;
+  }
+
+  .close-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #1D2026;
+    cursor: pointer;
+    margin-left: 20%;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay */
+    z-index: 30; /* Below nav, above content */
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1025px) {
+    .close-menu {
+        display: none;
+    }
+}
+
+/* Hide hamburger and show nav on desktop */
+@media (max-width: 575px) {
+  .nav {
+    display: flex;
+    width: 250px;
+  }
+
+  .nav a, .close-menu {
+    margin-left: 10%;
+  }
+}

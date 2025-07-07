@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+/* src/App.css */
+/* import KumbhSans from Google Fonts link - Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700 */
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: Kumbh Sans, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.app {
+  background: #F7F8FD;
+  min-height: 100vh; /* Ensure the app takes full viewport height */
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:  100px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  flex-grow: 1; /* Allow main content to grow and fill space */
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 140px 40px; /* Reduced padding for mobile */
+    gap: 24px; /* Adjusted gap for tighter layout */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr; /* Single column for tablet */
+    padding: 80px; /* Reduced padding for tablet */
+    gap: 24px; /* Adjusted gap */
   }
 }

@@ -1,0 +1,30 @@
+/* src/components/QuantitySelector.css */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background: #F6F8FD;
+  border-radius: 10px;
+  width: 150px;
+  border: 1px solid #F7F8FD;
+}
+
+.quantity-button {
+  background:#F6F8FD;
+  border: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #FF7E1B;
+}
+
+.quantity-button:disabled {
+  color: #B6BCC8;
+  cursor: not-allowed;
+}
+
+.quantity {
+  padding: 10px 20px;
+  font-weight: 700;
+  color: #1D2026;
+  
+}
