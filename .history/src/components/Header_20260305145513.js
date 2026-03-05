@@ -1,6 +1,6 @@
 // src/components/Header.js
 import React from 'react';
-import {FaBars} from 'react-icons/fa';
+import { FaShoppingCart, FaBars } from 'react-icons/fa';
 import avatar from '../assets/images/image-avatar.png'; // Adjust file name if different
 import './Header.css';
 import logo from '../assets/images/logo.svg';
@@ -19,6 +19,7 @@ const Header = ({ cartItems, toggleCart }) => {
         <FaBars />
       </button>
       <div className="logo">
+       {/* <h1>sneakers</h1> Placeholder */}
        <img src={logo} alt="Logo" />
        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
         <button className="close-menu" onClick={toggleMenu} aria-label="Close menu">

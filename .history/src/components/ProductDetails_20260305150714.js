@@ -8,8 +8,6 @@ const ProductDetails = ({ addToCart }) => {
   const price = 125.00;
   const originalPrice = 250.00;
   const discount = 50;
-  const money = (n) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 
   const handleAddToCart = () => {
     if (quantity > 0) {
@@ -28,10 +26,10 @@ const ProductDetails = ({ addToCart }) => {
       </p>
       <div className="price-container">
         <div className="price-main">
-          <span className="current-price">{money(price)}</span>
+          <span className="current-price">${price.toFixed(2)}</span>
           <span className="discount">{discount}%</span>
         </div>
-        <span className="original-price">{money(originalPrice)}</span>
+        <span className="original-price">${originalPrice.toFixed(2)}</span>
       </div>
       <div className="actions">
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} />

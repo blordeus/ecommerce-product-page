@@ -116,6 +116,8 @@ const ProductGallery = () => {
         <div
           className="lightbox"
           onClick={closeLightbox}
+          onKeyDown={closeLightbox}
+          tabIndex={0}
         >
           <button
             type="button"
@@ -124,10 +126,10 @@ const ProductGallery = () => {
           >
             ×
           </button>
-          <div className="lightbox-image-container" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-image-container">
             <img
               src={images[selectedImageIndex]}
-              alt="Fall Limited Edition Sneakers"
+              alt="Product in lightbox"
               className="lightbox-image"
             />
             <button

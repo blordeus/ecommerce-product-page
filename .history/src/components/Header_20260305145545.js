@@ -1,6 +1,6 @@
 // src/components/Header.js
 import React from 'react';
-import {FaBars} from 'react-icons/fa';
+import {FaBars } from 'react-icons/fa';
 import avatar from '../assets/images/image-avatar.png'; // Adjust file name if different
 import './Header.css';
 import logo from '../assets/images/logo.svg';

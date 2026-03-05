@@ -124,7 +124,7 @@ const ProductGallery = () => {
           >
             ×
           </button>
-          <div className="lightbox-image-container" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-image-container">
             <img
               src={images[selectedImageIndex]}
               alt="Fall Limited Edition Sneakers"

@@ -38,8 +38,10 @@ const ProductGallery = () => {
   };
 
   const closeLightbox = (e) => {
-  if (e.target === e.currentTarget) setIsLightboxOpen(false);
-};
+    if (e.target === e.currentTarget || e.key === "Escape") {
+      setIsLightboxOpen(false);
+    }
+  };
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -70,7 +72,7 @@ const ProductGallery = () => {
           />
         </button>
         <button
-          type="button"
+          
           className="nav-button prev"
           onClick={prevImage}
           aria-label="Previous image"
@@ -78,7 +80,6 @@ const ProductGallery = () => {
           <FaChevronLeft />
         </button>
         <button
-          type="button"
           className="nav-button next"
           onClick={nextImage}
           aria-label="Next image"
@@ -87,51 +88,39 @@ const ProductGallery = () => {
         </button>
       </div>
       <div className="thumbnails">
-        {images.map((image, index) => {
-          const isActive = selectedImageIndex === index;
-
-          return (
-            <button
-              key={image}
-              type="button"
-              className={`thumbnail-button ${isActive ? "active" : ""}`}
-              onClick={() => handleThumbnailClick(index)}
-              aria-label={`View image ${index + 1}`}
-              aria-current={isActive ? "true" : undefined}
-            >
-              <img
-                src={image}
-                alt=""
-                aria-hidden="true"
-                className="thumbnail"
-                onError={(e) =>
-                  console.error("Thumbnail failed to load:", e.target.src)
-                }
-              />
-            </button>
-          );
-        })}
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Thumbnail ${index + 1}`}
+            className={`thumbnail ${selectedImageIndex === index ? "active" : ""}`}
+            onClick={() => handleThumbnailClick(index)}
+            onError={(e) =>
+              console.error("Thumbnail failed to load:", e.target.src)
+            }
+          />
+        ))}
       </div>
       {isLightboxOpen && (
         <div
           className="lightbox"
           onClick={closeLightbox}
+          onKeyDown={closeLightbox}
+          tabIndex={0}
         >
           <button
-            type="button"
             className="close-button"
             onClick={() => setIsLightboxOpen(false)}
           >
             ×
           </button>
-          <div className="lightbox-image-container" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-image-container">
             <img
               src={images[selectedImageIndex]}
-              alt="Fall Limited Edition Sneakers"
+              alt="Product in lightbox"
               className="lightbox-image"
             />
             <button
-              type="button"
               className="nav-button prev"
               onClick={prevImage}
               aria-label="Previous image"

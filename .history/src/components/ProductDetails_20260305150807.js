@@ -28,10 +28,10 @@ const ProductDetails = ({ addToCart }) => {
       </p>
       <div className="price-container">
         <div className="price-main">
-          <span className="current-price">{money(price)}</span>
+          <span className="current-price">${price.toFixed(2)}</span>
           <span className="discount">{discount}%</span>
         </div>
-        <span className="original-price">{money(originalPrice)}</span>
+        <span className="original-price">${originalPrice.toFixed(2)}</span>
       </div>
       <div className="actions">
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} />

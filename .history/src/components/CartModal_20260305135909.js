@@ -6,26 +6,21 @@ const money = (n) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 
 const CartModal = ({ cart, removeItem, toggleCart }) => {
-  const items = Array.isArray(cart?.items) ? cart.items : [];
-  const total = typeof cart?.total === "number" ? cart.total : 0;
-
   return (
     <div className="cart-modal">
       <div className="cart-content">
         <h2 className="cart-title">Cart</h2>
-
-        {items.length === 0 ? (
+        {cart.items.length === 0 ? (
           <p className="cart-empty">Your cart is empty.</p>
         ) : (
           <>
-            {items.map((item) => (
+            {cart.items.map((item) => (
               <div key={item.name} className="cart-item">
                 <p>{item.name}</p>
                 <p>
                   {money(item.price)} x {item.quantity} = {money(item.price * item.quantity)}
                 </p>
                 <button
-                  type="button"
                   onClick={() => removeItem(item.name)}
                   className="remove-button"
                   aria-label={`Remove ${item.name} from cart`}
@@ -34,8 +29,8 @@ const CartModal = ({ cart, removeItem, toggleCart }) => {
                 </button>
               </div>
             ))}
-            <p className="cart-total">Total: {money(total)}</p>
-            <button type="button" onClick={toggleCart} className="checkout-button">
+            <p className="cart-total">Total: ${cart.total.toFixed(2)}</p>
+            <button onClick={toggleCart} className="checkout-button">
               Checkout
             </button>
           </>
@@ -46,3 +41,4 @@ const CartModal = ({ cart, removeItem, toggleCart }) => {
 };
 
 export default CartModal;
+

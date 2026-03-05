@@ -38,8 +38,10 @@ const ProductGallery = () => {
   };
 
   const closeLightbox = (e) => {
-  if (e.target === e.currentTarget) setIsLightboxOpen(false);
-};
+    if (e.target === e.currentTarget || e.key === "Escape") {
+      setIsLightboxOpen(false);
+    }
+  };
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -88,34 +90,34 @@ const ProductGallery = () => {
       </div>
       <div className="thumbnails">
         {images.map((image, index) => {
-          const isActive = selectedImageIndex === index;
+  const isActive = selectedImageIndex === index;
 
-          return (
-            <button
-              key={image}
-              type="button"
-              className={`thumbnail-button ${isActive ? "active" : ""}`}
-              onClick={() => handleThumbnailClick(index)}
-              aria-label={`View image ${index + 1}`}
-              aria-current={isActive ? "true" : undefined}
-            >
-              <img
-                src={image}
-                alt=""
-                aria-hidden="true"
-                className="thumbnail"
-                onError={(e) =>
-                  console.error("Thumbnail failed to load:", e.target.src)
-                }
-              />
-            </button>
-          );
-        })}
+  return (
+    <button
+      key={image}
+      type="button"
+      className={`thumbnail-button ${isActive ? "active" : ""}`}
+      onClick={() => handleThumbnailClick(index)}
+      aria-label={`View image ${index + 1}`}
+      aria-current={isActive ? "true" : undefined}
+    >
+      <img
+        src={image}
+        alt=""
+        aria-hidden="true"
+        className="thumbnail"
+        onError={(e) => console.error("Thumbnail failed to load:", e.target.src)}
+      />
+    </button>
+  );
+})}
       </div>
       {isLightboxOpen && (
         <div
           className="lightbox"
           onClick={closeLightbox}
+          onKeyDown={closeLightbox}
+          tabIndex={0}
         >
           <button
             type="button"
@@ -124,10 +126,10 @@ const ProductGallery = () => {
           >
             ×
           </button>
-          <div className="lightbox-image-container" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-image-container">
             <img
               src={images[selectedImageIndex]}
-              alt="Fall Limited Edition Sneakers"
+              alt="Product in lightbox"
               className="lightbox-image"
             />
             <button

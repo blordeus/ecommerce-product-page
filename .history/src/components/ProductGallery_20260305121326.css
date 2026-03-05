@@ -16,14 +16,6 @@
   cursor: pointer;
 }
 
-.main-image-button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-}
-
 .nav-button {
   display: none;
   position: absolute;
@@ -65,19 +57,6 @@
 .thumbnail.active {
   border-color: #F28C38;
   opacity: 0.5;
-}
-
-.thumbnail-button {
-  border: 0;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-  border-radius: inherit; /* if you have rounded thumbnails */
-}
-
-.thumbnail-button:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 3px;
 }
 
 .lightbox {

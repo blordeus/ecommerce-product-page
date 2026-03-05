@@ -19,7 +19,7 @@ const QuantitySelector = ({ quantity, setQuantity }) => {
       >
         -
       </button>
-      <span className="quantity" aria-live="polite">{quantity}</span>
+      <span className="quantity">{quantity}</span>
       <button
         type="button"
         onClick={increment}

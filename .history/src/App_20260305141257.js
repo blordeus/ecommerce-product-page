@@ -14,11 +14,11 @@ const App = () => {
 
   // add
   const addToCart = (
+    
     quantity,
     price,
     productName = "Fall Limited Edition Sneakers",
   ) => {
-    if (!Number.isFinite(quantity) || quantity <= 0) return;
     setCart((prev) => {
       const existing = prev.items.find((i) => i.name === productName);
       const nextItems = existing
@@ -48,26 +48,15 @@ const App = () => {
   }, [cart]);
 
   useEffect(() => {
-  try {
-    const savedCart = JSON.parse(localStorage.getItem('cart'));
-
-    if (savedCart && Array.isArray(savedCart.items)) {
-      const items = savedCart.items
-        .filter((i) => i && typeof i.name === 'string')
-        .map((i) => ({
-          name: i.name,
-          price: Number(i.price) || 0,
-          quantity: Number(i.quantity) || 0,
-        }))
-        .filter((i) => i.quantity > 0 && i.price >= 0);
-
-      const total = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-      setCart({ items, total });
+    try {
+      const savedCart = JSON.parse(localStorage.getItem("cart"));
+      if (savedCart && Array.isArray(savedCart.items)) {
+        setCart(savedCart);
+      }
+    } catch (error) {
+      console.error("Failed to load cart from local storage:", error);
     }
-  } catch (error) {
-    console.error('Failed to load cart from local storage:', error);
-  }
-}, []);
+  }, []);
 
   return (
     <div className="app">
